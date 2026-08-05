@@ -6,17 +6,13 @@ import seaborn as sns
 import streamlit as st
 import pandas as pd
 import joblib
-
+st.set_page_config(page_title="XGBoost Churn Prediction System",
+                    layout="wide")
 
 @st.cache_resource
 def load_model():
     return joblib.load("xgboost_model.pkl")
-
 model = load_model()
-
-st.set_page_config(page_title="XGBoost Churn Prediction System",
-                    layout="wide")
-
 # Collect user inputs
 st.sidebar.header("Input Features")
 feature_1 = st.sidebar.number_input("Feature 1", value=0.0)
