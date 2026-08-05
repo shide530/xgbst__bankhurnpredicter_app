@@ -14,7 +14,7 @@ def load_model():
 
 model = load_model()
 
-st.set_page_config(page_title="XGBoost Churn Prediction System"
+st.set_page_config(page_title="XGBoost Churn Prediction System",
                     layout="wide")
 
 # Collect user inputs
