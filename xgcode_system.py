@@ -23,7 +23,7 @@ Geography=st.sidebar.selectbox(
 Gender=st.sidebar.selectbox(
   "Gender",["Female","Male"])
 Card_Type=st.sidebar.selectbox(
-  "Card Type",["DIAMOND","GOLD"]
+  "Card Type",["DIAMOND","GOLD"])
 RowNumber=st.sidebar.number_input("RowNumber",min_value=6.0,max_value=10000,value=6)
 Age = st.sidebar.number_input("Age",min_value=18,max_value=84,value=20)
 CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850,value=430)
