@@ -43,6 +43,8 @@ input_data = pd.DataFrame([[Age,CreditScore,Tenure,Balance,NumOfProducts,HasCrCa
 
 if st.button("Predict"):
     prediction = model.predict(input_data)[0]
-    result="Customer is likely to churn" if prediction ==1
-            else "Customer is likely to stay"
+    if prediction==1:
+      result="Customer is likely to churn" 
+    else:
+      result="Customer is likely to stay"
     st.success(f"Prediction: {result}")
