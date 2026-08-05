@@ -15,6 +15,16 @@ def load_model():
 model = load_model()
 # Collect user inputs
 st.sidebar.header("Input Features")
+le_geography=joblib.load("le_geography.pkl")
+le_gender=joblib.load(le_gender.pkl")
+le_gender=joblib.load("le_card_type.pkl")
+Geography=st.sidebar.selectbox(
+  "Geography",["France","Spain","Germany"])
+Gender=st.sidebar.selectbox(
+  "Gender",["Female","Male"])
+Card_Type=st.sidebar.selectbox(
+  "Card Type",["DIAMOND","GOLD"]
+RowNumber=st.sidebar.number_input("RowNumber",min_value=6.0,max_value=10000,value=6)
 Age = st.sidebar.number_input("Age",min_value=18,max_value=84,value=20)
 CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850,value=430)
 Tenure=st.sidebar.number_input("Tenure",min_value=0.00,max_value=10.00,value=0.00) 
@@ -28,8 +38,12 @@ Satisfaction_Score=st.sidebar.number_input("satisfaction rate",min_value=1.00,ma
 Point_Earned=st.sidebar.number_input("Points Earned",min_value=219.00,max_value=1000.00,value=250.00)
 # Build a single-row DataFrame matching your model's expected column names
 
-input_data = pd.DataFrame([[Age,CreditScore,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,Point_Earned]],
-                          columns=["Age",
+input_data = pd.DataFrame([[Geography,Gender,Card_Type,RowNumber,Age,CreditScore,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,Point_Earned]],
+                          columns=["Geography",
+                                   "Gender",
+                                   "Card Type",
+                                   "RowNumber",
+                                   "Age",
                                   "CreditScore",
                                    "Tenure",
                                     "Balance",
