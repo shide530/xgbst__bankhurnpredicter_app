@@ -16,7 +16,7 @@ model = load_model()
 # Collect user inputs
 st.sidebar.header("Input Features")
 le_geography=joblib.load("le_geography.pkl")
-le_gender=joblib.load(le_gender.pkl")
+le_gender=joblib.load("le_gender.pkl")
 le_gender=joblib.load("le_card_type.pkl")
 Geography=st.sidebar.selectbox(
   "Geography",["France","Spain","Germany"])
