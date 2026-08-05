@@ -16,7 +16,7 @@ model = load_model()
 # Collect user inputs
 st.sidebar.header("Input Features")
 Age = st.sidebar.number_input("Age",min_value=18,max_value=84,value=20)
-CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850 value=430)
+CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850,value=430)
 Tenure=st.sidebar.number_input("Tenure",min_value=0.00,max_value=10.00,value=0.00) 
 Balance=st.sidebar.number_input("Balance",min_value=0.00,max_value=221532.80,value=10000.00)
 NumOfProducts=st.sidebar.number_input("NumOfProducts",min_value=1.00,max_value=4.00,value=1.00)
