@@ -7,3 +7,4 @@ seaborn
 xgboost
 scikit_learn
 joblib
+streamlit>=1.35.0,<1.39.0
