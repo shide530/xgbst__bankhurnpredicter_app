@@ -20,7 +20,7 @@ CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850,
 Tenure=st.sidebar.number_input("Tenure",min_value=0.00,max_value=10.00,value=0.00) 
 Balance=st.sidebar.number_input("Balance",min_value=0.00,max_value=221532.80,value=10000.00)
 NumOfProducts=st.sidebar.number_input("NumOfProducts",min_value=1.00,max_value=4.00,value=1.00)
-HasCrCard=st.sidebar.number_input("Has a CreditCard",[1,0])
+HasCrCard=st.sidebar.number_input("Has a CreditCard",min_value=0,max_value=1,value=1)
 EstimatedSalary=st.sidebar.number_input("EstimatedSalary",min_value=106.670,max_value=199992.48,value=250000.00)
 complain=st.sidebar.number_input("complain",[1,0])
 Satisfaction_Score=st.sidebar.number_input("satisfaction rate",min_value=1.00,max_value=5.00,value=1.00)
