@@ -29,14 +29,14 @@ Point_Earned=st.sidebar.number_input("Points Earned",min_value=219.00,max_value=
 # Build a single-row DataFrame matching your model's expected column names
 
 input_data = pd.DataFrame([[Age,CreditScore,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,Point_Earned]],
-                          columns=["Age"
+                          columns=["Age",
                                   "CreditScore",
                                    "Tenure",
                                     "Balance",
                                     "NumOfProducts",
                                     "HasCrCard",
                                      "IsActiveMember",
-                                     "EstimatedSalary,"
+                                     "EstimatedSalary",
                                       "Complain",
                                       "Satisfaction Score",
                                       "Point Earned"]
