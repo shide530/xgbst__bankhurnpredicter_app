@@ -27,7 +27,7 @@ Satisfaction_Score=st.sidebar.number_input("satisfaction rate",min_value=1.00,ma
 Point_Earned=st.sidebar.number_input("Points Earned",min_value=219.00,max_value=1000.00,value=250.00)
 # Build a single-row DataFrame matching your model's expected column names
 
-input_data = pd.DataFrame([[Age,CreditScore,Tenure,Balance,NumOfProducts,HasCrCard,EstimatedSalary,Complain,Satisfaction_Score,Points_Earned]],
+input_data = pd.DataFrame([[Age,CreditScore,Tenure,Balance,NumOfProducts,HasCrCard,EstimatedSalary,Complain,Satisfaction_Score,Point_Earned]],
                           columns=["Age"
                                   "CreditScore",
                                    "Tenure",
