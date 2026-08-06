@@ -15,12 +15,19 @@ def load_model():
 model = load_model()
 # Collect user inputs
 st.sidebar.header("Input Features")
+# Collect user inputs
+st.sidebar.header("Input Features")
+
+# 1. First, define the widget to get user input
+geography_input = st.sidebar.selectbox("Geography", ["France", "Germany", "Spain"])
 geo_map = {"France": 0, "Germany": 1, "Spain": 2}
 geography_encoded = geo_map[geography_input]
+gender_input = st.sidebar.selectbox("Gender", ["Female", "Male"])
 gender_map = {"Female": 0, "Male": 1}
 gender_encoded = gender_map[gender_input]
-card_type_map = {"DIAMOND": 0, "GOLD": 1, "PLATINUM": 2, "SILVER": 3}
-card_type_encoded = card_type_map[card_type_input]
+CardType_input=st.sidebar.selectbox("Card Type",["GOLD","PLATINUM","DIAMOND","SILVER"]
+cardtype_map={"GOLD": 0,"PLATINUM": 1,"DIAMOND": 2,"SILVER": 3}
+cardtype_encoded=cardtype_map[Cardtype_input]
 RowNumber=st.sidebar.number_input("RowNumber",min_value=6.0,max_value=10000,value=6)
 Age = st.sidebar.number_input("Age",min_value=18,max_value=84,value=20)
 CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850,value=430)
