@@ -25,7 +25,7 @@ geography_encoded = geo_map[geography_input]
 gender_input = st.sidebar.selectbox("Gender", ["Female", "Male"])
 gender_map = {"Female": 0, "Male": 1}
 gender_encoded = gender_map[gender_input]
-CardType_input=st.sidebar.selectbox("Card Type",["GOLD","PLATINUM","DIAMOND","SILVER"]
+CardType_input=st.sidebar.selectbox("Card Type",["GOLD","PLATINUM","DIAMOND","SILVER"])
 cardtype_map={"GOLD": 0,"PLATINUM": 1,"DIAMOND": 2,"SILVER": 3}
 cardtype_encoded=cardtype_map[Cardtype_input]
 RowNumber=st.sidebar.number_input("RowNumber",min_value=6.0,max_value=10000,value=6)
