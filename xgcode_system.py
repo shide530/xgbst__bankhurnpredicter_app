@@ -19,12 +19,12 @@ st.sidebar.header("Input Features")
 st.sidebar.header("Input Features")
 
 # 1. First, define the widget to get user input
-geography_input = st.sidebar.selectbox("Geography", ["France", "Germany", "Spain"])
-geo_map = {"France": 0, "Germany": 1, "Spain": 2}
-geography_encoded = geo_map[geography_input]
-gender_input = st.sidebar.selectbox("Gender", ["Female", "Male"])
-gender_map = {"Female": 0, "Male": 1}
-gender_encoded = gender_map[gender_input]
+Geography_input = st.sidebar.selectbox("Geography", ["France", "Germany", "Spain"])
+Geo_map = {"France": 0, "Germany": 1, "Spain": 2}
+Geography_encoded = Geo_map[Geography_input]
+Gender_input = st.sidebar.selectbox("Gender", ["Female", "Male"])
+Gender_map = {"Female": 0, "Male": 1}
+Gender_encoded = Gender_map[Gender_input]
 CardType_input=st.sidebar.selectbox("Card Type",["GOLD","PLATINUM","DIAMOND","SILVER"])
 CardType_map={"GOLD": 0,"PLATINUM": 1,"DIAMOND": 2,"SILVER": 3}
 CardType_encoded=CardType_map[CardType_input]
