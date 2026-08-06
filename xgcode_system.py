@@ -27,7 +27,7 @@ gender_map = {"Female": 0, "Male": 1}
 gender_encoded = gender_map[gender_input]
 CardType_input=st.sidebar.selectbox("Card Type",["GOLD","PLATINUM","DIAMOND","SILVER"])
 CardType_map={"GOLD": 0,"PLATINUM": 1,"DIAMOND": 2,"SILVER": 3}
-CardType_encoded=CardType_map[Cardtype_input]
+CardType_encoded=CardType_map[CardType_input]
 RowNumber=st.sidebar.number_input("RowNumber",min_value=6.0,max_value=10000,value=6)
 Age = st.sidebar.number_input("Age",min_value=18,max_value=84,value=20)
 CreditScore = st.sidebar.number_input("CreditScore",min_value=365,max_value=850,value=430)
