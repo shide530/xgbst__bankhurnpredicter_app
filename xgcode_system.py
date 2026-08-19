@@ -38,30 +38,64 @@ CardType_map={"GOLD": 0,"PLATINUM": 1,"DIAMOND": 2,"SILVER": 3}
 CardType_encoded=CardType_map[CardType_input]
 Point_Earned=st.sidebar.number_input("Points Earned",min_value=219.00,max_value=1000.00,value=250.00)
 # Build a single-row DataFrame matching your model's expected column names
-
-input_data = pd.DataFrame([[RowNumber,CreditScore,Geography_encoded,Gender_encoded,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,CardType_encoded,Point_Earned]],
-                          columns=["RowNumber",
-                                  "CreditScore",
-                                   "Geography",
-                                   "Gender",
-                                   "Age",
-                                   "Tenure",
-                                    "Balance",
-                                    "NumOfProducts",
-                                    "HasCrCard",
-                                     "IsActiveMember",
-                                     "EstimatedSalary",
-                                      "Complain",
-                                      "Satisfaction Score",
-                                      "Card Type",
-                                      "Point Earned"]
-                         )
+feature_columns=["RowNumber",
+                 "CreditScore",
+                 "Geography",
+                "Gender",
+                 "Age"
+               "Tenure",
+               "Balance",
+               "NumOfProducts",
+               "HasCrCard",
+               "IsActiveMember",
+               "EstimatedSalary",
+               "Complain",
+               "Satisfaction Score",
+               "Card Type",
+              "Point Earned"]
+                         
+input_data = pd.DataFrame([[RowNumber,CreditScore,Geography_encoded,Gender_encoded,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,CardType_encoded,Point_Earned]],colimns=feature_columns)
 
 if st.button("Predict"):
     st.write("Running predictions...")
-    prediction = model.predict(input_data)[0]
-    if prediction==1:
-      result="Customer is likely to churn" 
-    else:
-      result="Customer is likely to stay"
-    st.success(f"Prediction: {result}")
+    prediction = model.predict_proba(input_data)[0]
+  churn_prob = prediction[1] * 100
+    
+    # 2. Main Dashboard - Metrics Section
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.metric(label="Churn Probability", value=f"{churn_prob:.1f}%")
+    with col2:
+        st.metric(label="Retention Probability", value=f"{(100 - churn_prob):.1f}%")
+    with col3:
+        status = "High Risk" if churn_prob >= 50 else "Low Risk"
+        st.metric(label="Risk Tier", value=status)
+
+    st.divider()
+
+    # 3. Main Dashboard - Visualizations Section
+    left_chart_col, right_chart_col = st.columns(2)
+
+    with left_chart_col:
+        st.subheader("Risk Score Gauge")
+        st.write("Current Churn Probability Indicator:")
+        st.progress(int(churn_prob))
+        
+        if churn_prob >= 50:
+            st.error("⚠️ Action Needed: High risk of customer cancellation.")
+        else:
+            st.success("✅ Customer profile appears stable.")
+
+    with right_chart_col:
+        st.subheader("Model Feature Importances")
+        importances = model.feature_importances_
+
+        fig, ax = plt.subplots(figsize=(6, 3.5))
+        ax.barh(feature_columns, importances, color="#4F8BF9")
+        ax.set_xlabel("Importance")
+        plt.tight_layout()
+        
+        st.pyplot(fig)
+else:
+    st.info("Adjust the sidebar parameters and click **Run Prediction** to view the report.")
