@@ -58,6 +58,7 @@ input_data = pd.DataFrame([[RowNumber,CreditScore,Geography_encoded,Gender_encod
                          )
 
 if st.button("Predict"):
+    st.write("Running predictions...")
     prediction = model.predict(input_data)[0]
     if prediction==1:
       result="Customer is likely to churn" 
