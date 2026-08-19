@@ -42,7 +42,7 @@ feature_columns=["RowNumber",
                  "CreditScore",
                  "Geography",
                 "Gender",
-                 "Age"
+                "Age",
                "Tenure",
                "Balance",
                "NumOfProducts",
