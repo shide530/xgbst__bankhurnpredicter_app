@@ -54,7 +54,7 @@ feature_columns=["RowNumber",
                "Card Type",
               "Point Earned"]
                          
-input_data = pd.DataFrame([[RowNumber,CreditScore,Geography_encoded,Gender_encoded,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,CardType_encoded,Point_Earned]],colimns=feature_columns)
+input_data = pd.DataFrame([[RowNumber,CreditScore,Geography_encoded,Gender_encoded,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Complain,Satisfaction_Score,CardType_encoded,Point_Earned]],columns=feature_columns)
 
 if st.button("Predict"):
     st.write("Running predictions...")
