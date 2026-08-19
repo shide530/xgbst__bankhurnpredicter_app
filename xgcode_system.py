@@ -59,7 +59,7 @@ input_data = pd.DataFrame([[RowNumber,CreditScore,Geography_encoded,Gender_encod
 if st.button("Predict"):
     st.write("Running predictions...")
     prediction = model.predict_proba(input_data)[0]
-  churn_prob = prediction[1] * 100
+    churn_prob = prediction[1] * 100
     
     # 2. Main Dashboard - Metrics Section
     col1, col2, col3 = st.columns(3)
